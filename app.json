@@ -13,16 +13,66 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "supportsTablet": true,
+      "bundleIdentifier": "com.spotifyclog.app",
+      "infoPlist": {
+        "CFBundleURLTypes": [
+          {
+            "CFBundleURLSchemes": [
+              "spotifyclog"
+            ],
+            "CFBundleURLName": "com.spotifyclog.app"
+          },
+          {
+            "CFBundleURLSchemes": [
+              "spotifyclog"
+            ],
+            "CFBundleURLName": "com.spotifyclog.app"
+          }
+        ],
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
+    "android": {
+      "package": "com.spotifyclog.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "spotifyclog",
+              "host": "*",
+              "pathPattern": ".*"
+            },
+            {
+              "scheme": "https",
+              "host": "callback",
+              "pathPattern": ".*"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "scheme": "spotifyclog",
+    "extra": {
+      "eas": {
+        "projectId": "2bc994d7-e41d-4147-89f5-1a66130444fc"
+      }
+    },
+    "owner": "trixslap"
   }
 }
